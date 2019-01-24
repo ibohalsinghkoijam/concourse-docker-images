@@ -5,20 +5,20 @@ resources:
     uri: https://github.com/ibohalsinghkoijam/concourse-docker-images.git
     branch: master
 
-- name: hello-world-docker-image
+- name: olive-concourse-docker-image
   type: docker-image
   source:
     email: koijam@olivetech.net
     username: ibohal1802
     password: myishika0509
-    repository: ibohal1802/concourse-olive2
+    repository: ibohal1802/concourse-olive3
 
 jobs:
 - name: publish
   public: true
   plan:
   - get: tutorial
-  - put: hello-world-docker-image
+  - put: olive-concourse-docker-image
     params:
       build: tutorial/docker
   - task: run
@@ -27,7 +27,7 @@ jobs:
       image_resource:
         type: docker-image
         source:
-          repository: ibohal1802/concourse-olive2
+          repository: ibohal1802/concourse-olive3
       run:
         path: /bin/hello-world
         args: []

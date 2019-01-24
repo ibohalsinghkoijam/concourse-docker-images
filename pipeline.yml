@@ -11,7 +11,7 @@ resources:
     email: koijam@olivetech.net
     username: ibohal1802
     password: myishika0509
-    repository: ibohal1802/concourse-demo-olive
+    repository: ibohal1802/concourse-olive2
 
 jobs:
 - name: publish
@@ -20,14 +20,14 @@ jobs:
   - get: tutorial
   - put: hello-world-docker-image
     params:
-      build: concourse-docker-images/docker
+      build: tutorial/docker
   - task: run
     config:
       platform: linux
       image_resource:
         type: docker-image
         source:
-          repository: ibohal1802/concourse-demo-olive
+          repository: ibohal1802/concourse-olive2
       run:
         path: /bin/hello-world
         args: []

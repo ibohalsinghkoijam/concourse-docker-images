@@ -8,10 +8,10 @@ resources:
 - name: olive-concourse-docker-image
   type: docker-image
   source:
-    email: koijam@olivetech.net
-    username: ibohal1802
-    password: myishika0509
-    repository: ibohal1802/concourse-olive3
+    email: ((email))
+    username: ((username))
+    password: ((password))
+    repository: ((username))/concourse-olive3
 
 jobs:
 - name: publish
@@ -27,9 +27,9 @@ jobs:
       image_resource:
         type: docker-image
         source:
-          repository: ibohal1802/concourse-olive3
+          repository: ((username))/concourse-olive3
       run:
         path: /bin/hello-world
         args: []
       params:
-        NAME: ibohal1802
+        NAME: ((username))

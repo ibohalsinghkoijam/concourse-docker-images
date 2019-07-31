@@ -11,7 +11,7 @@ resources:
     email: ((email))
     username: ((username))
     password: ((password))
-    repository: ((username))/concourse-olive3
+    repository: ((username))/concourse-sample
 
 jobs:
 - name: publish
@@ -27,7 +27,7 @@ jobs:
       image_resource:
         type: docker-image
         source:
-          repository: ((username))/concourse-olive3
+          repository: ((username))/concourse-sample
       run:
         path: /bin/hello-world
         args: []
